@@ -1,0 +1,37 @@
+import os
+def inc():
+ plus=int(input("Enter your monthly income"))
+ os.system('cls')
+ return plus
+
+def exp(plus):
+ tot=0
+ trck = {}
+ while(True):
+  key=input("Enter the category of your expense or enter 'done' to exit")
+  os.system('cls')
+  if key.lower()=="done":
+   break
+  else:
+   value=input("Enter the expense")
+   tot=tot+int(value)
+   trck[key]=value
+   os.system('cls')
+ print(trck)
+ print("Your total monthly spending is", tot)
+ if tot>plus:
+  print("Caution! You are soon going to be in a financial crisis!")
+  print("As your total spends in a month is greater than your monthly income")
+  print("Income",plus)
+  print("Expense",tot)
+ elif tot==plus:
+  print("You seriously need to redo your finances as your total monthly spends is equal to your monthly income.")
+  print("Income",plus)
+  print("Expense",tot) 
+ else:
+  print("Income",plus)
+  print("Expense",tot)
+  print("Your Finances are in safe mode")
+plus=inc()
+exp(plus)
+   
