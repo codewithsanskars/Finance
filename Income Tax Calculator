@@ -1,0 +1,47 @@
+class IT:
+
+ def __init__(self, inc, tx):
+  self.inc=inc
+  self.tx=tx
+ 
+ def ex(self):
+    self.inc = self.inc - 150000
+    if self.inc<300000:
+     print("No tax will be deducted")
+    elif inc>300000 and self.inc<600000:
+     self.tx=(self.inc*5/100)
+    elif self.inc>600000 and self.inc<900000:
+     self.tx=15000+(self.inc*10/100)
+    elif self.inc>900000 and self.inc<1200000:
+     self.tx=45000+(self.inc*15/100)
+    elif self.inc>1200000 and self.inc<1500000:
+     self.tx=90000+(self.inc*20/100)
+    else:
+     self.tx=150000+(self.inc*30/1000)
+    return self.tx
+ 
+ def calc(self):
+    if inc<300000:
+     print("No tax will be deducted")
+    elif inc>300000 and self.inc<600000:
+     self.tx=(inc*5/100)
+    elif inc>600000 and inc<900000:
+     self.tx=15000+(self.inc*10/100)
+    elif inc>900000 and inc<1200000:
+     self.tx=45000+(self.inc*15/100)
+    elif inc>1200000 and inc<1500000:
+     self.tx=90000+(self.inc*20/100)
+    else:
+     self.tx=150000+(self.inc*30/1000)
+    return self.tx
+
+    
+tx=0
+inc=int(input("Enter your annual inccome"))
+tax=IT(inc,tx)
+print(tax.calc())
+l=int(input("If you want to claim 80C or 80D Deductions, press '1' "))
+if l==1:
+     print(tax.ex())
+else:
+     print("Error")
