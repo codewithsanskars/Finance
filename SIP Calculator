@@ -1,0 +1,19 @@
+class SIP:
+ def __init__(self,p,r,t):
+  self.p=p
+  self.t=t
+  self.r=r
+ 
+ def inv(self):
+  j=self.r/12
+  amt=0
+  for i in range(self.t*12):
+   amt=amt+self.p
+   amt=amt+(amt*j/100)
+  return amt
+
+p=int(input("Enter the value to be debited monthly "))
+r=int(input("Enter the rate of interest"))
+t=int(input("Enter the time period"))
+mon=SIP(p,r,t)
+print(mon.inv())
